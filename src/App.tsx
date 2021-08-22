@@ -2,6 +2,7 @@ import './App.css';
 import React from 'react'
 import UserIndex from './components/User/UserIndex';
 import SearchIndex from './components/SearchIndex'
+import CountdownTimer from './components/Timer'
 
 interface tokenState{
   sessionToken: any | undefined
@@ -48,6 +49,7 @@ class App extends React.Component<{}, tokenState> {
       <div className="App">
         <div><button onClick={this.clearToken}>Logout</button></div>
         {this.protectedViews()}
+        <CountdownTimer startTimeInSeconds={ 900}/>
         </div>
     );
     
