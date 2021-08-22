@@ -1,5 +1,5 @@
 import React from "react";
-import MotherComponent from './Mother/mother'
+// import MotherComponent from './Mother/Mother'
 import UpdateTable from './Mother/updateMother'
 import CreateDrug from './Mother/MotherCreate'
 import UserAdmin from './Admin'
