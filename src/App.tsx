@@ -1,8 +1,11 @@
 import './App.css';
 import React from 'react'
+import '@fontsource/roboto'
+import ButtonAppBar from './components/AppBar';
 import UserIndex from './components/User/UserIndex';
 import SearchIndex from './components/SearchIndex'
-import CountdownTimer from './components/Timer'
+import {AppBar, Container, Typography} from '@material-ui/core'
+
 
 interface tokenState{
   sessionToken: any | undefined
@@ -46,11 +49,18 @@ class App extends React.Component<{}, tokenState> {
 
   render() {
     return (
-      <div className="App">
-        <div><button onClick={this.clearToken}>Logout</button></div>
+      
+
+      <Container maxWidth='xl' style={{ backgroundColor: '#353b46' }}>
+        <Typography component="div" style={{ height: '100vh', width: '100%', fontFamily:"Roboto", fontWeight: 700}}>
+          <div className="App">
+            <ButtonAppBar clearToken={ this.clearToken}/>
+        {/* <div><button onClick={this.clearToken}>Logout</button></div> */}
         {this.protectedViews()}
-        <CountdownTimer startTimeInSeconds={ 900}/>
+        
         </div>
+      </Typography>
+        </Container>
     );
     
   }

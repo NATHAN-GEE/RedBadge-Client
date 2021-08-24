@@ -1,7 +1,7 @@
 import React from "react";
 import UserLogin from "./UserLogin";
 import UserRegister from "./UserCreate";
-import { Container, Row, Col } from "reactstrap";
+import { Container, Grid, Typography } from '@material-ui/core'
 
 type LoginProps={
   updateToken: any;
@@ -21,16 +21,17 @@ class UserIndex extends React.Component<LoginProps, LoginState> {
     }
     render() {
         return (
-          <Container className="container">
-            <Row>
-              <Col md="6">
+          <Container>
+              <Typography component='div' style={{margin: 20}}>
+            <Grid container spacing={10}>
+              <Grid item xs>
                 <UserRegister updateToken={this.props.updateToken} />
-              </Col>
-      
-              <Col md="6" className="login-col">
+              </Grid>
+              <Grid item xs>
                 <UserLogin updateToken={this.props.updateToken} role={this.props.role} />
-              </Col>
-            </Row>
+              </Grid>
+              </Grid>
+              </Typography>
           </Container>
         );
         
