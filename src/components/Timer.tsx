@@ -1,4 +1,32 @@
 import React from 'react'
+import { Button, Typography } from '@material-ui/core'
+import { createTheme } from '@material-ui/core/styles';
+import { ThemeProvider } from '@material-ui/styles';
+import { blue } from '@material-ui/core/colors';
+import { pink } from '@material-ui/core/colors';
+import { ButtonGroup } from 'reactstrap';
+import { typography } from '@material-ui/system';
+
+const theme = createTheme({
+  
+    palette: {
+    primary: {
+        main: blue[200],
+        contrastText: '#fff'
+        
+        },
+    secondary: {
+        main: pink[200],
+        contrastText: '#fff'
+    },
+  },
+});
+
+
+
+/////////////////////////////////
+/////////////////////////////////
+/////////////////////////////////
 interface TimerProps{
     startTimeInSeconds: any
 }
@@ -40,10 +68,19 @@ export default class CountdownTimer extends React.Component<TimerProps, TimerSta
     render() {
         return (
             <div>
-                {Math.floor(this.state.timeRemainingInSeconds / 60)}:{this.state.timeRemainingInSeconds % 60}
-                <button onClick={()=> this.test()}>Start</button>
-                <button onClick={()=> this.pause()}>Pause</button>
-                <button onClick={()=> this.restart()}>Restart</button>
+                <ThemeProvider theme={theme}>
+
+                    <Typography style={{color: 'white', fontSize:'36px', fontWeight:'bold'}}>
+                    {Math.floor(this.state.timeRemainingInSeconds / 60)}:{this.state.timeRemainingInSeconds % 60}
+                    
+                    </Typography>
+                    <ButtonGroup>
+
+                <Button variant="contained" color='primary' onClick={()=> this.test()}>Start</Button>
+                <Button variant="contained" color="primary" onClick={()=> this.pause()}>Pause</Button>
+                <Button variant="contained" color="secondary" onClick={()=> this.restart()}>Restart</Button>
+                    </ButtonGroup>
+                </ThemeProvider>
             </div>
         );
     }

@@ -1,4 +1,14 @@
 import React from 'react'
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import { Paper } from '@material-ui/core'
+import EditIcon from '@material-ui/icons/Edit'
+import DeleteIcon from '@material-ui/icons/Delete'
+
 
 interface tokenProps{
     token: any,
@@ -42,40 +52,36 @@ class MotherComponent extends React.Component<tokenProps, entry>{
     mapper = () => {
         return this.props.place.map((place1:any, index:any)=>{
             return (
-                <tr key={index}>
-                    <th scope="row">{place1.id}</th>
-                    <td>{place1.med}</td>
-                    <td>{place1.amount}</td>
-                    <td>{place1.createdAt}</td>
-                    <td>{place1.updatedAt}</td>
-                    <td><button onClick={() => {this.deleteMother(place1)}}>Delete</button></td>
-                    <td><button onClick={() => { this.props.editUpdate(place1); this.props.updateOn()}}>Update</button></td>
-                </tr>
+                <TableRow key={index}>
+                    {/* <TableCell component='th' scope='place1'>{place1.id}</TableCell> */}
+                    <TableCell>{place1.med}</TableCell>
+                    <TableCell>{place1.amount}</TableCell>
+                    <TableCell>{place1.createdAt}</TableCell>
+                    <TableCell>{place1.updatedAt}</TableCell>
+                    <TableCell><DeleteIcon color='secondary'onClick={() => {this.deleteMother(place1)}}></DeleteIcon></TableCell>
+                    <TableCell><EditIcon color='primary' onClick={() => { this.props.editUpdate(place1); this.props.updateOn()}}></EditIcon></TableCell>
+                </TableRow>
             )
         })
     };
     render() {
         return (
-            <div>
-            <div>
-                {/* <h1>{this.props.token}</h1> */}
-                <thead>
-                    <tr>
-            <th>Id</th>
-            <th>Med</th>
-            <th>Amount</th>
-            <th>Create</th>
-            <th>Updated</th>
-          </tr>
-                </thead>
-                <tbody>
+            <TableContainer component={Paper}>
+            <Table>
+            <TableHead>
+            <TableRow>
+            {/* <TableCell>Id</TableCell> */}
+            <TableCell>Med</TableCell>
+            <TableCell>Amount</TableCell>
+            <TableCell>Create</TableCell>
+            <TableCell>Updated</TableCell>
+            </TableRow>
+            </TableHead>
+            <TableBody>
                 {this.mapper()}
-                </tbody>
-            </div>
-                <div>
-                
-            </div>
-            </div>
+            </TableBody>
+            </Table>
+            </TableContainer>
         )
     }
 }

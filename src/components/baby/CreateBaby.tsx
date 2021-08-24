@@ -1,26 +1,6 @@
 import React from "react";
-import { Form, FormGroup, Label } from "reactstrap";
-import { createTheme, Typography } from '@material-ui/core';
-import { blue } from '@material-ui/core/colors';
-import { pink } from '@material-ui/core/colors';
-import { ThemeProvider } from '@material-ui/styles';
-import { TextField,Button } from "@material-ui/core";
+import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 
-const theme1 = createTheme({
-  spacing: 4,
-    palette: {
-      type: 'dark',
-    primary: {
-        main: blue[200],
-        contrastText: '#fff'
-        
-        },
-    secondary: {
-        main: pink[200],
-        contrastText: '#fff'
-    },
-  },
-});
 interface tokenProps{
     token: any,
     getTable: any
@@ -64,34 +44,34 @@ class CreateDrug extends React.Component<tokenProps, updateState> {
     render() {
       
         return (
-          <ThemeProvider theme={theme1}>
-            <Typography component='h2' style={{fontWeight:'bold'}}><h2>Add New Medication</h2></Typography>
+          <>
+            <h3>Save Destination</h3>
             <Form onSubmit={this.handleSubmit}>
               <FormGroup>
-                <TextField
-                  label='Medication'
+                <Label htmlFor="med"></Label>
+                <Input
                   type="text"
                   name="med"
                   placeholder="med"
                   value={this.state.med}
                             onChange={(e: any) => this.setState({ med: e.target.value })}
                 >
-                </TextField>
+                </Input>
               </FormGroup>
               <FormGroup>
-                <TextField
+                <Label htmlFor="amount"></Label>
+                <Input
                   type="text"
-                  label="Amount"
                   name="amount"
                   placeholder="amount"
                   value={this.state.amount}
-                  onChange={(e:any) => this.setState({ amount: e.target.value })}
+                            onChange={(e:any) => this.setState({ amount: e.target.value })}
                 />
               </FormGroup>
               
-              <Button type="submit" variant='contained' color='primary' style={{margin:'10px'}}>Submit</Button>
+              <Button type="submit">Submit</Button>
             </Form>
-          </ThemeProvider>
+          </>
         );
 
   }

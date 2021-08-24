@@ -1,5 +1,32 @@
 import React from "react";
-import { Form, FormGroup, Label, Input, Button } from "reactstrap";
+import { Form } from "reactstrap";
+import { FormGroup, Container, Button, Typography, TextField } from '@material-ui/core'
+import { createTheme } from '@material-ui/core/styles';
+import { ThemeProvider } from '@material-ui/styles';
+import { blue } from '@material-ui/core/colors';
+import { pink } from '@material-ui/core/colors';
+import { InputAdornment } from '@material-ui/core';
+import AlternateEmail from '@material-ui/icons/AlternateEmail'
+import VpnKey from '@material-ui/icons/VpnKey';
+
+
+const theme = createTheme({
+  
+    palette: {
+    primary: {
+        main: blue[200],
+        contrastText: '#fff'
+        
+        },
+    secondary: {
+        main: pink[200],
+        contrastText: '#fff'
+    },
+    
+  },
+  
+});
+
 
 type LoginProps={
     updateToken?: any;
@@ -12,14 +39,14 @@ interface LoginState{
 }
 
 class UserRegister extends React.Component<LoginProps, LoginState> {
-    constructor(props: any) {
-        super(props)
-            this.state = {
-                email: '',
-                update: '',
-                password: ''
-            
-            }
+  constructor(props: any) {
+    super(props)
+    this.state = {
+      email: '',
+      update: '',
+      password: ''
+      
+    }
         this.handleSubmit = this.handleSubmit.bind(this)
 }
     handleSubmit = (e: any) => {
@@ -43,30 +70,53 @@ class UserRegister extends React.Component<LoginProps, LoginState> {
     }
     render(){
 
-            return (
+      return (
               <div>
-                <h1>SignUp</h1>
+                <ThemeProvider theme={theme}>
+              <Typography component="div" style={{ backgroundColor: pink[200], height: '35vh', width: '100%', padding: 25, margin: 15, borderRadius: '50%',fontFamily:'Roboto', fontWeight:500 }}>
+
+                  <Container maxWidth='xs'>
+                    
+                <Typography component='h1' style={{color:'#FFF'}}><h1>Register</h1></Typography>
                 <Form onSubmit={this.handleSubmit}>
-                  <FormGroup>
-                    <Label htmlFor="email">Email:</Label>
-                    <Input
+                  <FormGroup >
+                    <TextField
+                      InputProps={{
+                      startAdornment: (
+                        <InputAdornment position="start">
+                          <AlternateEmail />
+                        </InputAdornment>
+                      ),
+                    }}
+                      label='Email'
                       type="text"
-                      required
+                      required={true}
                       value={this.state.email}
                       onChange={(e) => this.setState({ email: e.target.value })}
                     />
                   </FormGroup>
                   <FormGroup>
-                    <Label htmlFor="password">Password:</Label>
-                    <Input
+                    <TextField
+                      InputProps={{
+                      startAdornment: (
+                        <InputAdornment position="start">
+                          <VpnKey />
+                        </InputAdornment>
+                      ),
+                    }}
+                      label='Password'
                       type="password"
                       value={this.state.password}
                       onChange={(e) => this.setState({ password: e.target.value })}
+                      required={true}
                     />
+                  <Button variant="contained" color='primary' type="submit">SignUp</Button>
                   </FormGroup>
                   
-                  <Button type="submit">SignUp</Button>
                 </Form>
+                </Container>
+</Typography>
+                  </ThemeProvider>
               </div>
             );
 
