@@ -1,5 +1,5 @@
 import React from 'react'
-
+import {Paper} from '@material-ui/core'
 interface tokenProps{
     token: any,
     getAdmin: any
@@ -57,7 +57,7 @@ class UserAdmin extends React.Component<tokenProps, entry>{
     render() {
         return (
             <div>
-            <div>
+            <Paper style={{ maxHeight: 600, overflow: 'auto'}}>
                 {/* <h1>{this.props.token}</h1> */}
                 <thead>
                     <tr>
@@ -71,10 +71,8 @@ class UserAdmin extends React.Component<tokenProps, entry>{
                 <tbody>
                 {this.mapper1()}
                 </tbody>
-            </div>
-                <div>
-                
-            </div>
+            </Paper>
+            
             </div>
         )
     }

@@ -1,11 +1,10 @@
 import React from 'react'
-import { Button, Typography } from '@material-ui/core'
+import { Button, Typography, Paper } from '@material-ui/core'
 import { createTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 import { blue } from '@material-ui/core/colors';
 import { pink } from '@material-ui/core/colors';
 import { ButtonGroup } from 'reactstrap';
-import { typography } from '@material-ui/system';
 
 const theme = createTheme({
   
@@ -69,17 +68,19 @@ export default class CountdownTimer extends React.Component<TimerProps, TimerSta
         return (
             <div>
                 <ThemeProvider theme={theme}>
-
-                    <Typography style={{color: 'white', fontSize:'36px', fontWeight:'bold'}}>
+                    <Paper elevation={20} style={{ backgroundColor: pink[200], paddingBottom: '10px', paddingTop: '10px', marginTop: 10 }}>
+                        <Typography style={{color:'white'}}>
+                        <h2>Breast Feeding Timer</h2>
+                        </Typography>
+                    <Typography style={{ color: 'white', fontSize: '36px', fontWeight: 'bold', marginTop:'5px'}}>
                     {Math.floor(this.state.timeRemainingInSeconds / 60)}:{this.state.timeRemainingInSeconds % 60}
-                    
                     </Typography>
                     <ButtonGroup>
-
-                <Button variant="contained" color='primary' onClick={()=> this.test()}>Start</Button>
-                <Button variant="contained" color="primary" onClick={()=> this.pause()}>Pause</Button>
-                <Button variant="contained" color="secondary" onClick={()=> this.restart()}>Restart</Button>
-                    </ButtonGroup>
+                <Button variant="contained" color='primary' style={{margin:'5px', paddingTop:'5px'}} onClick={()=> this.test()}>Start</Button>
+                <Button variant="contained" color="primary" style={{margin:'5px', paddingTop:'5px'}} onClick={()=> this.pause()}>Pause</Button>
+                <Button variant="contained" color="primary" style={{margin:'5px', paddingTop:'5px'}} onClick={()=> this.restart()}>Restart</Button>
+                        </ButtonGroup>
+                        </Paper>
                 </ThemeProvider>
             </div>
         );
