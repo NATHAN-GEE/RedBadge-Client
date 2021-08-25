@@ -11,7 +11,7 @@ import { createTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 import { blue } from '@material-ui/core/colors';
 import { pink } from '@material-ui/core/colors';
-
+import Sidebar from './sideBar';
 const theme = createTheme({
   
     palette: {
@@ -57,7 +57,7 @@ export default class ButtonAppBar extends React.Component<aprops, {}> {
             <AppBar position="static" color="primary">
               <Toolbar>
                 <IconButton edge="start"  color="inherit" aria-label="menu" >
-                  <MenuIcon />
+                  <Sidebar/>
                 </IconButton>
                 <Typography variant="h6" >
                   PostMama

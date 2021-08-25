@@ -3,9 +3,10 @@ import CountdownTimer from "./Timer";
 import UpdateBaby from "./baby/UpdateBaby";
 import UpdateTable from './Mother/updateMother'
 import CreateDrug from './Mother/MotherCreate'
+import CreateBaby from "./baby/CreateBaby";
 import MotherComponent from "./Mother/mother";
 import BabyComponent from './baby/Baby'
-import { Container, Grid } from '@material-ui/core'
+import { Container, Grid,Typography, Button } from '@material-ui/core'
 
 type LoginProps={
   token: any;
@@ -143,28 +144,24 @@ class SearchIndex extends React.Component<LoginProps,LoginState> {
       render() {
         
         return (
-          <Container maxWidth='xl'>
-            <Grid container spacing={4}>
-              <Grid item sm>
-                <button onClick={() => { this.getAdmin();this.setState({toggle: 'hide'}) }}>Adminhere</button>
-                <button onClick={() => { this.getTable();this.setState({toggle: 'hide'}) }}>Userhere</button>
-                <button onClick={() => { this.getBaby(); this.setState({toggle: 'baby'}) }}>Babyhere</button>
-            </Grid>
+          <Container maxWidth='xl'  style={{ backgroundColor: '#353b46', height: '100%', width: '100%' }}>
+            <Grid container spacing={2}>
+              <Grid item sm={6} xs={6} md={3} lg={2} zeroMinWidth>
+                <CreateDrug token={this.props.token} getTable={this.getTable} />
+              <CountdownTimer startTimeInSeconds={900} />
               </Grid>
-            <Grid container spacing={4}>
-              <Grid item sm>
-                  <CreateDrug token={this.props.token} getTable={this.getTable}/>
+              <Grid item sm={6} xs={6} md={3} lg={2}>
+                <CreateBaby token={this.props.token} getBaby={this.getBaby}/>
               </Grid>
-              <Grid item sm>
+              <Grid item sm={12} xs={12} md={6} lg={8} style={{marginTop:'15px'}}>
+                <Button variant='contained' color='primary' style={{margin:'10px'}} onClick={() => { this.getAdmin();this.setState({toggle: 'hide'}) }}>Adminhere</Button>
+                <Button variant='contained' color='secondary' style={{margin:'10px'}} onClick={() => { this.getTable();this.setState({toggle: 'hide'}) }}>Userhere</Button>
+                <Button variant='contained' color='primary' style={{margin:'10px'}} onClick={() => { this.getBaby(); this.setState({toggle: 'baby'}) }}>Babyhere</Button>
                   {this.updateHide()}
                    {this.updateBaby()} 
-
-              </Grid>
-              <Grid item sm>
               </Grid>
               
               </Grid>
-              <CountdownTimer startTimeInSeconds={900} />
           </Container>
         );
 }

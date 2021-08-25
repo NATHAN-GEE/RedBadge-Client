@@ -4,8 +4,28 @@ import '@fontsource/roboto'
 import ButtonAppBar from './components/AppBar';
 import UserIndex from './components/User/UserIndex';
 import SearchIndex from './components/SearchIndex'
-import {AppBar, Container, Typography} from '@material-ui/core'
+import {  Container, Typography } from '@material-ui/core'
+import BottomNavigation from '@material-ui/core/BottomNavigation';
+import { createTheme } from '@material-ui/core/styles';
+import { ThemeProvider } from '@material-ui/styles';
+import { blue } from '@material-ui/core/colors';
+import { pink } from '@material-ui/core/colors';
+import Sidebar from './components/sideBar';
 
+const theme = createTheme({
+  
+    palette: {
+    primary: {
+        main: blue[200],
+        contrastText: '#fff'
+        
+        },
+    secondary: {
+        main: pink[200],
+        contrastText: '#fff'
+    },
+  },
+});
 
 interface tokenState{
   sessionToken: any | undefined
@@ -50,16 +70,18 @@ class App extends React.Component<{}, tokenState> {
   render() {
     return (
       
-
-      <Container maxWidth='xl' style={{ backgroundColor: '#353b46' }}>
-        <Typography component="div" style={{ height: '100vh', width: '100%', fontFamily:"Roboto", fontWeight: 700}}>
+      <Container maxWidth='xl' style={{ backgroundColor: '#353b46', height: '100vh' }}>
+        <ThemeProvider theme={theme}>
           <div className="App">
             <ButtonAppBar clearToken={ this.clearToken}/>
-        {/* <div><button onClick={this.clearToken}>Logout</button></div> */}
-        {this.protectedViews()}
-        
-        </div>
-      </Typography>
+              {this.protectedViews()}
+          </div>
+        <Typography style={{width:'100%', position:'fixed', bottom: 0}}>
+          <BottomNavigation style={{backgroundColor:pink[200], width:'100%'}}>
+            <Sidebar/>
+          </BottomNavigation>
+          </Typography>
+          </ThemeProvider>
         </Container>
     );
     

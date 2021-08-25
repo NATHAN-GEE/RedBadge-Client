@@ -4,12 +4,11 @@ import { createTheme, Typography } from '@material-ui/core';
 import { blue } from '@material-ui/core/colors';
 import { pink } from '@material-ui/core/colors';
 import { ThemeProvider } from '@material-ui/styles';
-import { TextField,Button } from "@material-ui/core";
+import { TextField,Button, Paper } from "@material-ui/core";
 
 const theme1 = createTheme({
   spacing: 4,
     palette: {
-      type: 'dark',
     primary: {
         main: blue[200],
         contrastText: '#fff'
@@ -65,7 +64,8 @@ class CreateDrug extends React.Component<tokenProps, updateState> {
       
         return (
           <ThemeProvider theme={theme1}>
-            <Typography component='h2' style={{fontWeight:'bold'}}><h2>Add New Medication</h2></Typography>
+            <Paper elevation={20} style={{backgroundColor: pink[200], marginTop:'25px',padding:'5px'}}>
+              <Typography component='h2' style={{ fontWeight: 'bold', color:'white'}}><h2>Add New Medication</h2></Typography>
             <Form onSubmit={this.handleSubmit}>
               <FormGroup>
                 <TextField
@@ -90,7 +90,8 @@ class CreateDrug extends React.Component<tokenProps, updateState> {
               </FormGroup>
               
               <Button type="submit" variant='contained' color='primary' style={{margin:'10px'}}>Submit</Button>
-            </Form>
+              </Form>
+              </Paper>
           </ThemeProvider>
         );
 

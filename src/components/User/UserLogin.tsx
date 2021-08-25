@@ -12,7 +12,6 @@ import VpnKey from '@material-ui/icons/VpnKey';
 const theme = createTheme({
   
     palette: {
-      type: 'dark',
     primary: {
         main: blue[200],
         contrastText: '#fff'
@@ -65,10 +64,9 @@ handleSubmit = (e: any) => {
   };
     render() {
       return (
-        <div className='form'>
+        <div>
           <ThemeProvider theme={theme}>
           
-              <Typography  component="div" style={{ backgroundColor: blue[200], height: '35vh', width:'100%', padding: 25, margin: 15, borderRadius: '50%',fontFamily:'Roboto', fontWeight:700 }}>
             <Container maxWidth='xs'>
                 <Typography component='h1' style={{color:'#FFF'}}><h1>Login</h1></Typography>
             <Form onSubmit={this.handleSubmit}>
@@ -76,12 +74,12 @@ handleSubmit = (e: any) => {
                     
                     <TextField
                       InputProps={{
-          startAdornment: (
-            <InputAdornment position="start">
-              <AlternateEmail />
-            </InputAdornment>
-          ),
-        }}
+                      startAdornment: (
+                        <InputAdornment position="start">
+                          <AlternateEmail />
+                        </InputAdornment>
+                      ),
+                    }}
                       label='Email'
                       required={true}
                       color='secondary'
@@ -105,11 +103,10 @@ handleSubmit = (e: any) => {
                         onChange={(e: any) => this.setState({ password: e.target.value })}
                   required={true}
                 />
-                    <Button variant="contained" color='secondary' type="submit">Login</Button>
+                    <Button variant="contained" color='secondary' type="submit" style={{margin:'10px'}}>Login</Button>
                   </FormGroup>
                   </Form>
               </Container>
-              </Typography>
           </ThemeProvider>
           </div>
         );

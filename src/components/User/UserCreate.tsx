@@ -73,9 +73,8 @@ class UserRegister extends React.Component<LoginProps, LoginState> {
       return (
               <div>
                 <ThemeProvider theme={theme}>
-              <Typography component="div" style={{ backgroundColor: pink[200], height: '35vh', width: '100%', padding: 25, margin: 15, borderRadius: '50%',fontFamily:'Roboto', fontWeight:500 }}>
-
                   <Container maxWidth='xs'>
+
                     
                 <Typography component='h1' style={{color:'#FFF'}}><h1>Register</h1></Typography>
                 <Form onSubmit={this.handleSubmit}>
@@ -110,12 +109,11 @@ class UserRegister extends React.Component<LoginProps, LoginState> {
                       onChange={(e) => this.setState({ password: e.target.value })}
                       required={true}
                     />
-                  <Button variant="contained" color='primary' type="submit">SignUp</Button>
+                  <Button variant="contained" color='primary' type="submit" style={{margin:'10px'}}>SignUp</Button>
                   </FormGroup>
                   
                 </Form>
                 </Container>
-</Typography>
                   </ThemeProvider>
               </div>
             );

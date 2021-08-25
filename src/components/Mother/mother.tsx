@@ -8,7 +8,27 @@ import TableRow from '@material-ui/core/TableRow';
 import { Paper } from '@material-ui/core'
 import EditIcon from '@material-ui/icons/Edit'
 import DeleteIcon from '@material-ui/icons/Delete'
+import { createTheme, Typography } from '@material-ui/core';
+import { blue } from '@material-ui/core/colors';
+import { pink } from '@material-ui/core/colors';
+import { ThemeProvider } from '@material-ui/styles';
 
+
+const theme1 = createTheme({
+  
+  spacing: 4,
+    palette: {
+    primary: {
+        main: blue[200],
+        contrastText: '#fff'
+        
+        },
+    secondary: {
+        main: pink[200],
+        contrastText: '#fff'
+    },
+  },
+});
 
 interface tokenProps{
     token: any,
@@ -66,7 +86,9 @@ class MotherComponent extends React.Component<tokenProps, entry>{
     };
     render() {
         return (
-            <TableContainer component={Paper}>
+            <ThemeProvider theme={theme1}>
+            <Paper style={{ maxHeight: 550, overflow: 'auto', marginTop:'10px'}}>
+            <TableContainer>
             <Table>
             <TableHead>
             <TableRow>
@@ -81,7 +103,9 @@ class MotherComponent extends React.Component<tokenProps, entry>{
                 {this.mapper()}
             </TableBody>
             </Table>
-            </TableContainer>
+                </TableContainer>
+                </Paper>
+            </ThemeProvider>
         )
     }
 }
