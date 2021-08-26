@@ -3,7 +3,7 @@ import {
   Form,
   FormGroup,
 } from "reactstrap";
-import { Button, Typography } from '@material-ui/core';
+import { Button} from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
 
@@ -12,7 +12,6 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import { blue } from '@material-ui/core/colors';
 import { pink } from '@material-ui/core/colors';
 import { ThemeProvider } from '@material-ui/styles';
-import  EditIcon from '@material-ui/icons/Edit'
 
 const theme1 = createTheme({
   spacing: 4,

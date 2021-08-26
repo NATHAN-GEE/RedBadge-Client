@@ -3,14 +3,14 @@ import React from 'react'
 import '@fontsource/roboto'
 import ButtonAppBar from './components/AppBar';
 import UserIndex from './components/User/UserIndex';
-import SearchIndex from './components/SearchIndex'
+import SearchIndex from './components/Main/SearchIndex'
 import {  Container, Typography } from '@material-ui/core'
 import BottomNavigation from '@material-ui/core/BottomNavigation';
 import { createTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 import { blue } from '@material-ui/core/colors';
 import { pink } from '@material-ui/core/colors';
-import Sidebar from './components/sideBar';
+import Sidebar from './components/Main/sideBar';
 
 const theme = createTheme({
   
@@ -46,17 +46,14 @@ class App extends React.Component<{}, tokenState> {
   updateToken = (newToken:any) => {
     localStorage.setItem("token", newToken);
     this.setState({ sessionToken: newToken });
-    console.log(newToken)
   };
   roleCheck = (newRole:any) => {
     localStorage.setItem("role", newRole);
     this.setState({ role: newRole })
-    console.log(newRole)
   }
    clearToken = () => {
     localStorage.clear();
     this.setState({})
-     console.log('works')
   }
   protectedViews = () => {
     return (

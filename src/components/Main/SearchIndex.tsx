@@ -1,12 +1,12 @@
 import React from "react";
 import CountdownTimer from "./Timer";
-import UpdateBaby from "./baby/UpdateBaby";
-import UpdateTable from './Mother/updateMother'
-import CreateDrug from './Mother/MotherCreate'
-import CreateBaby from "./baby/CreateBaby";
-import MotherComponent from "./Mother/mother";
-import BabyComponent from './baby/Baby'
-import { Container, Grid,Typography, Button } from '@material-ui/core'
+import UpdateBaby from "../baby/UpdateBaby";
+import UpdateTable from '../Mother/updateMother'
+import CreateDrug from '../Mother/MotherCreate'
+import CreateBaby from "../baby/CreateBaby";
+import MotherComponent from "../Mother/mother";
+import BabyComponent from '../baby/Baby'
+import { Container, Grid, Button } from '@material-ui/core'
 
 type LoginProps={
   token: any;

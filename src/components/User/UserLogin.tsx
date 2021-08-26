@@ -1,7 +1,7 @@
 import React from 'react'
 import { Form } from 'reactstrap'
 import { FormGroup, Container,Button, Typography, TextField } from '@material-ui/core'
-import { createTheme, withStyles } from '@material-ui/core/styles';
+import { createTheme} from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 import { blue } from '@material-ui/core/colors';
 import { pink } from '@material-ui/core/colors';
@@ -56,7 +56,6 @@ handleSubmit = (e: any) => {
     })
         .then((res) => res.json())
         .then((json) => {
-          console.log(json)
           this.props.role(json.user.role)
           this.props.updateToken(json.sessionToken)
         });

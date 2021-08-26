@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, FormGroup, Label } from "reactstrap";
+import { Form, FormGroup} from "reactstrap";
 import { createTheme, Typography } from '@material-ui/core';
 import { blue } from '@material-ui/core/colors';
 import { pink } from '@material-ui/core/colors';
