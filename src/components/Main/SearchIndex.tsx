@@ -1,4 +1,5 @@
 import React from "react";
+import APIURL from "../../helpers/environment";
 import CountdownTimer from "./Timer";
 import UpdateBaby from "../baby/UpdateBaby";
 import UpdateTable from '../Mother/updateMother'
@@ -40,7 +41,7 @@ class SearchIndex extends React.Component<LoginProps,LoginState> {
   }
 
   getTable = () => {
-    fetch("http://localhost:4000/mother/all", {
+    fetch(`${APIURL}/mother/all`, {
       method: "GET",
       headers: new Headers({
         "Content-Type": "application/json",
@@ -53,7 +54,7 @@ class SearchIndex extends React.Component<LoginProps,LoginState> {
       });
   };
   getBaby = () => {
-    fetch("http://localhost:4000/baby/all", {
+    fetch(`${APIURL}/baby/all`, {
       method: "GET",
       headers: new Headers({
         "Content-Type": "application/json",
@@ -66,7 +67,7 @@ class SearchIndex extends React.Component<LoginProps,LoginState> {
       });
   };
   getAdmin = () => {
-    fetch("http://localhost:4000/mother/every", {
+    fetch(`${APIURL}/mother/every`, {
       method: "GET",
       headers: new Headers({
         "Content-Type": "application/json",

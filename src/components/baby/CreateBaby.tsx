@@ -1,4 +1,5 @@
 import React from "react";
+import APIURL from "../../helpers/environment";
 import { Form, FormGroup } from "reactstrap";
 import { createTheme, Typography } from '@material-ui/core';
 import { blue } from '@material-ui/core/colors';
@@ -68,7 +69,7 @@ class CreateBaby extends React.Component<tokenProps, updateState> {
 
    handleSubmit = (e:any) => {
     e.preventDefault();
-    fetch("http://localhost:4000/baby/create", {
+    fetch(`${APIURL}/baby/create`, {
       method: "POST",
       body: JSON.stringify({
         day: this.state.day,

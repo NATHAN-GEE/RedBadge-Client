@@ -1,4 +1,5 @@
 import React from 'react'
+import APIURL from '../../helpers/environment';
 import {Paper} from '@material-ui/core'
 interface tokenProps{
     token: any,
@@ -29,7 +30,7 @@ class UserAdmin extends React.Component<tokenProps, entry>{
 ///////////////////////////
 ///////////////////////////
     deleteMother1 = (place: any) => {
-        fetch(`http://localhost:4000/mother/admin/${place.id}`, {
+        fetch(`${APIURL}/mother/admin/${place.id}`, {
             method: "DELETE",
             headers: new Headers({
                 "Content-Type": "application.json",

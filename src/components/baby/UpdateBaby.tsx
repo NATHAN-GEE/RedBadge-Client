@@ -3,6 +3,7 @@ import {
   Form,
   FormGroup,
 } from "reactstrap";
+import APIURL from '../../helpers/environment';
 import { Button} from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
@@ -82,7 +83,7 @@ class UpdateBaby extends React.Component<tokenProps, updateState>{
     }
     updateBaby1 = (event: any) => {
             event.preventDefault();
-            fetch(`http://localhost:4000/baby/${this.props.update.id}`, {
+            fetch(`${APIURL}/baby/${this.props.update.id}`, {
                 method: "PUT",
                 body: JSON.stringify({
                     day: this.state.day,

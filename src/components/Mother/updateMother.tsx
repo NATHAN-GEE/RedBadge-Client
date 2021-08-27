@@ -3,6 +3,7 @@ import {
   Form,
   FormGroup,
 } from "reactstrap";
+import APIURL from '../../helpers/environment';
 import { Button} from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
@@ -54,7 +55,7 @@ class UpdateTable extends React.Component<tokenProps, updateState>{
     }
     updateMother = (event: any) => {
             event.preventDefault();
-            fetch(`http://localhost:4000/mother/${this.props.update.id}`, {
+            fetch(`${APIURL}/mother/${this.props.update.id}`, {
                 method: "PUT",
                 body: JSON.stringify({
                     med: this.state.med,

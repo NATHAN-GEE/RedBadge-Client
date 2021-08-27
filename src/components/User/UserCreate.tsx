@@ -1,4 +1,5 @@
 import React from "react";
+import APIURL from "../../helpers/environment";
 import { Form } from "reactstrap";
 import { FormGroup, Container, Button, Typography, TextField } from '@material-ui/core'
 import { createTheme } from '@material-ui/core/styles';
@@ -52,7 +53,7 @@ class UserRegister extends React.Component<LoginProps, LoginState> {
 }
     handleSubmit = (e: any) => {
         e.preventDefault();
-        fetch("http://localhost:4000/user/register", {
+        fetch(`${APIURL}/user/register`, {
             method: "POST",
 
             body: JSON.stringify({

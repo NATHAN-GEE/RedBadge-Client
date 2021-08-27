@@ -1,4 +1,5 @@
 import React from 'react'
+import APIURL from '../../helpers/environment';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -59,7 +60,7 @@ class MotherComponent extends React.Component<tokenProps, entry>{
 ///////////////////////////
 ///////////////////////////
     deleteMother = (place: any) => {
-        fetch(`http://localhost:4000/mother/${place.id}`, {
+        fetch(`${APIURL}/mother/${place.id}`, {
             method: "DELETE",
             headers: new Headers({
                 "Content-Type": "application.json",

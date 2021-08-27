@@ -1,4 +1,5 @@
 import React from "react";
+import APIURL from "../../helpers/environment";
 import { Form, FormGroup} from "reactstrap";
 import { createTheme, Typography } from '@material-ui/core';
 import { blue } from '@material-ui/core/colors';
@@ -40,7 +41,7 @@ class CreateDrug extends React.Component<tokenProps, updateState> {
 
    handleSubmit = (e:any) => {
     e.preventDefault();
-    fetch("http://localhost:4000/mother/create", {
+    fetch(`${APIURL}/mother/create`, {
       method: "POST",
       body: JSON.stringify({
         med:this.state.med,

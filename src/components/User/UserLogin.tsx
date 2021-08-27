@@ -1,5 +1,6 @@
 import React from 'react'
 import { Form } from 'reactstrap'
+import APIURL from '../../helpers/environment';
 import { FormGroup, Container,Button, Typography, TextField } from '@material-ui/core'
 import { createTheme} from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
@@ -47,7 +48,7 @@ constructor(props: LoginProps) {
 handleSubmit = (e: any) => {
   e.preventDefault();
   
-    fetch("http://localhost:4000/user/login", {
+    fetch(`${APIURL}/user/login`, {
       method: "POST",
 
       body: JSON.stringify({ email: this.state.email, password:this.state.password  }),
