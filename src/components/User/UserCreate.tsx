@@ -9,7 +9,6 @@ import { InputAdornment } from '@material-ui/core';
 import AlternateEmail from '@material-ui/icons/AlternateEmail'
 import VpnKey from '@material-ui/icons/VpnKey';
 
-
 const theme = createTheme({
   
     palette: {
@@ -35,7 +34,8 @@ type LoginProps={
 interface LoginState{
     email:string
     update:any,
-    password: string
+  password: string
+  valid: string
 }
 
 class UserRegister extends React.Component<LoginProps, LoginState> {
@@ -44,10 +44,11 @@ class UserRegister extends React.Component<LoginProps, LoginState> {
     this.state = {
       email: '',
       update: '',
-      password: ''
+      password: '',
+      valid: ''
       
     }
-        this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
 }
     handleSubmit = (e: any) => {
         e.preventDefault();
@@ -68,30 +69,31 @@ class UserRegister extends React.Component<LoginProps, LoginState> {
                 this.props.updateToken(data.sessionToken);
             });
     }
+  
+
+      
     render(){
 
       return (
               <div>
                 <ThemeProvider theme={theme}>
-                  <Container maxWidth='xs'>
-
-                    
-                <Typography component='h1' style={{color:'#FFF'}}><h1>Register</h1></Typography>
+                  <Container maxWidth='xs'>  
+                <Typography  style={{color:'#FFF'}}><h1>Register</h1></Typography>
                 <Form onSubmit={this.handleSubmit}>
                   <FormGroup >
                     <TextField
-                      InputProps={{
+                    InputProps={{
                       startAdornment: (
                         <InputAdornment position="start">
                           <AlternateEmail />
                         </InputAdornment>
                       ),
                     }}
-                      label='Email'
-                      type="text"
-                      required={true}
-                      value={this.state.email}
-                      onChange={(e) => this.setState({ email: e.target.value })}
+                    label='Email'
+                    type="email"
+                    required={true}
+                    value={this.state.email}
+                    onChange={(e) => this.setState({email: e.target.value})}
                     />
                   </FormGroup>
                   <FormGroup>

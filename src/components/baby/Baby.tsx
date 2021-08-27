@@ -124,6 +124,8 @@ class BabyComponent extends React.Component<tokenProps, entry>{
             <TableCell>Soil-1</TableCell>
             <TableCell>Soil-2</TableCell>
             <TableCell>Soil-3</TableCell>
+            <TableCell>Delete</TableCell>
+            <TableCell>Update</TableCell>
             </TableRow>
             </TableHead>
             <TableBody>

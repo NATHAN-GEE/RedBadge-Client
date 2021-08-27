@@ -51,7 +51,7 @@ export default class ButtonAppBar extends React.Component<aprops, {}> {
                         <Typography style={{display:'flex', marginLeft:'auto'}}>
 
                         <Button color="inherit" onClick={this.props.clearToken}><MeetingRoomIcon/></Button>
-                        </Typography>
+                </Typography>
               </Toolbar>
             </AppBar>
           </ThemeProvider>

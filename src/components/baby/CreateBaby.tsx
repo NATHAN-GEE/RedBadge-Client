@@ -1,5 +1,4 @@
 import React from "react";
-import './baby.css'
 import { Form, FormGroup } from "reactstrap";
 import { createTheme, Typography } from '@material-ui/core';
 import { blue } from '@material-ui/core/colors';
@@ -123,7 +122,7 @@ class CreateBaby extends React.Component<tokenProps, updateState> {
             <Typography component='h2' style={{color:'white'}}>
             <h2>Add New Baby Entry</h2>
             </Typography>
-            <Typography component='body' style={{color:'white'}}>
+            <Typography  style={{color:'white'}}>
             <Form onSubmit={this.handleSubmit}>
               <FormControl>
                     <TextField

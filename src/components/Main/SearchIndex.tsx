@@ -49,7 +49,6 @@ class SearchIndex extends React.Component<LoginProps,LoginState> {
     })
       .then((res) => res.json())
       .then((logData) => {
-        console.log(logData)
           this.setState({ place: logData });
       });
   };
@@ -63,7 +62,6 @@ class SearchIndex extends React.Component<LoginProps,LoginState> {
     })
       .then((res) => res.json())
       .then((logData) => {
-        console.log(logData)
           this.setState({ place: logData });
       });
   };
@@ -77,14 +75,12 @@ class SearchIndex extends React.Component<LoginProps,LoginState> {
     })
       .then((res) => res.json())
       .then((logData) => {
-        console.log(logData)
           this.setState({ place: logData });
       });
   };
   
   editUpdate = (place:any) => {
       this.setState({ update: place });
-    console.log(place);
   };
   updateOn = () => {
       this.setState({ on: true });

@@ -4,6 +4,24 @@
   font-family: 'Roboto';
 }
 
+
+.logo2{
+    border-top: solid 3px black;
+    border-right: solid 3px black;
+    border-bottom: solid 3px black;
+    border-left: none;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    margin-left: 70%;
+}
+.logo2 h6{
+    font-size: 16px;
+    padding-right: 10px;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;

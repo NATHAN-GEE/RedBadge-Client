@@ -10,7 +10,6 @@ import { createTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 import { blue } from '@material-ui/core/colors';
 import { pink } from '@material-ui/core/colors';
-import Sidebar from './components/Main/sideBar';
 
 const theme = createTheme({
   
@@ -73,12 +72,16 @@ class App extends React.Component<{}, tokenState> {
             <ButtonAppBar clearToken={ this.clearToken}/>
               {this.protectedViews()}
           </div>
-        <Typography style={{width:'100%', position:'fixed', bottom: 0}}>
-          <BottomNavigation style={{backgroundColor:pink[200], width:'100%'}}>
-            <Sidebar/>
+        <Typography style={{width:'97%', position:'fixed', bottom: 0}}>
+            <BottomNavigation style={{ backgroundColor: pink[200], paddingTop: 10, paddingBottom: 10 }}>
+               <p>© 2021 Copyright: DevelopingNathan</p>
+                <div className='logo2'>
+                  <h6>DevelopingNathan</h6>
+                </div>
           </BottomNavigation>
           </Typography>
-          </ThemeProvider>
+        </ThemeProvider>
+        
         </Container>
     );
     
