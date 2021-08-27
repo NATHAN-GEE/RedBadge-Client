@@ -70,10 +70,11 @@ class MotherComponent extends React.Component<tokenProps, entry>{
         });
     };
     mapper = () => {
-        return this.props.place.map((place1:any, index:any)=>{
+        const results = this.props.place
+        return results.map((place1:any, index:any)=>{
             return (
                 <TableRow key={index}>
-                    {/* <TableCell component='th' scope='place1'>{place1.id}</TableCell> */}
+                    <TableCell component='th' scope='place1'>{place1.id}</TableCell>
                     <TableCell>{place1.med}</TableCell>
                     <TableCell>{place1.amount}</TableCell>
                     <TableCell>{place1.createdAt}</TableCell>
@@ -92,11 +93,11 @@ class MotherComponent extends React.Component<tokenProps, entry>{
             <Table>
             <TableHead>
             <TableRow>
-            {/* <TableCell>Id</TableCell> */}
-            <TableCell>Medication</TableCell>
+            <TableCell>Id</TableCell>
+            <TableCell>Med</TableCell>
             <TableCell>Amount</TableCell>
-            <TableCell>Time Created</TableCell>
-            <TableCell>Last Updated Time</TableCell>
+            <TableCell>Time created</TableCell>
+            <TableCell>Last Update</TableCell>
             <TableCell>Delete</TableCell>
             <TableCell>Update</TableCell>
             </TableRow>
