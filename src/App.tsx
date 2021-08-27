@@ -3,14 +3,13 @@ import React from 'react'
 import '@fontsource/roboto'
 import ButtonAppBar from './components/AppBar';
 import UserIndex from './components/User/UserIndex';
-import SearchIndex from './components/SearchIndex'
+import SearchIndex from './components/Main/SearchIndex'
 import {  Container, Typography } from '@material-ui/core'
 import BottomNavigation from '@material-ui/core/BottomNavigation';
 import { createTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 import { blue } from '@material-ui/core/colors';
 import { pink } from '@material-ui/core/colors';
-import Sidebar from './components/sideBar';
 
 const theme = createTheme({
   
@@ -46,17 +45,14 @@ class App extends React.Component<{}, tokenState> {
   updateToken = (newToken:any) => {
     localStorage.setItem("token", newToken);
     this.setState({ sessionToken: newToken });
-    console.log(newToken)
   };
   roleCheck = (newRole:any) => {
     localStorage.setItem("role", newRole);
     this.setState({ role: newRole })
-    console.log(newRole)
   }
    clearToken = () => {
     localStorage.clear();
     this.setState({})
-     console.log('works')
   }
   protectedViews = () => {
     return (
@@ -76,12 +72,16 @@ class App extends React.Component<{}, tokenState> {
             <ButtonAppBar clearToken={ this.clearToken}/>
               {this.protectedViews()}
           </div>
-        <Typography style={{width:'100%', position:'fixed', bottom: 0}}>
-          <BottomNavigation style={{backgroundColor:pink[200], width:'100%'}}>
-            <Sidebar/>
+        <Typography style={{width:'97%', position:'fixed', bottom: 0}}>
+            <BottomNavigation style={{ backgroundColor: pink[200], paddingTop: 10, paddingBottom: 10 }}>
+               <p>© 2021 Copyright: DevelopingNathan</p>
+                <div className='logo2'>
+                  <h6>DevelopingNathan</h6>
+                </div>
           </BottomNavigation>
           </Typography>
-          </ThemeProvider>
+        </ThemeProvider>
+        
         </Container>
     );
     

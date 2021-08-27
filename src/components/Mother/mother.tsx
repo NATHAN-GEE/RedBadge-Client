@@ -8,7 +8,7 @@ import TableRow from '@material-ui/core/TableRow';
 import { Paper } from '@material-ui/core'
 import EditIcon from '@material-ui/icons/Edit'
 import DeleteIcon from '@material-ui/icons/Delete'
-import { createTheme, Typography } from '@material-ui/core';
+import { createTheme } from '@material-ui/core';
 import { blue } from '@material-ui/core/colors';
 import { pink } from '@material-ui/core/colors';
 import { ThemeProvider } from '@material-ui/styles';
@@ -93,10 +93,12 @@ class MotherComponent extends React.Component<tokenProps, entry>{
             <TableHead>
             <TableRow>
             {/* <TableCell>Id</TableCell> */}
-            <TableCell>Med</TableCell>
+            <TableCell>Medication</TableCell>
             <TableCell>Amount</TableCell>
-            <TableCell>Create</TableCell>
-            <TableCell>Updated</TableCell>
+            <TableCell>Time Created</TableCell>
+            <TableCell>Last Updated Time</TableCell>
+            <TableCell>Delete</TableCell>
+            <TableCell>Update</TableCell>
             </TableRow>
             </TableHead>
             <TableBody>

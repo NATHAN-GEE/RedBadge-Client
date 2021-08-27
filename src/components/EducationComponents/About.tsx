@@ -5,7 +5,7 @@ interface toggle{
     toggle: boolean
 }
 
-class EducationComponent extends React.Component<{}, toggle>{
+class AboutComponent extends React.Component<{}, toggle>{
     constructor(props: any) {
         super(props)
         this.state = {
@@ -24,28 +24,30 @@ class EducationComponent extends React.Component<{}, toggle>{
     render() {
         return (
             <div>
-            <Button onClick={this.toggleModalOpen}>Skin-to-Skin</Button>
+            <Button onClick={this.toggleModalOpen}>About</Button>
             <Dialog open={this.state.toggle}
                 style={{ textAlign: 'center', justifyContent:'center'}}
                 maxWidth='xs'
                 onClose={this.toggleModalClose}
                 fullWidth={true}>
                     <Typography paragraph style={{ padding: '10px' }}>
-                        <h3>Skin-to-Skin contact</h3>
+                        <h3>About Author</h3>
                         <hr/>
-                        <p>Multiple studies show that mothers and babies benefit from skin-to-skin.
-                            Immediately after birth and during the first week, the baby and mother build that
-                            bond of connection.
+                        <p>When my wife and I had our baby in 2021 we were given a lot of paper work.
+                            I decided that I could put all this paperwork into an application to make it easier.
+                            This is my attempt of making that process electronic and all in one place.
+                            If you would like to react out to me you can do so on the contact page.
+                            Here are some other things I have done.
                         </p>
                         <hr/>
                         <Typography style={{textAlign: 'left'}}>
 
                         <ul>
-                            <li>The baby is more likely to latch on.</li>
-                            <li>Regulates boby temperature</li>
-                            <li>Baby cries less</li>
-                            <li>Helps normalize heart reate and blood pressure</li>
-                            <li>The baby is more likely to breastfeed exclusively</li>
+                            <li><a href='https://nathan-gee.github.io/Portfolio/' rel="noopener noreferrer" target='_blank'>Portfolio</a></li>
+                            <li><a href='https://github.com/NATHAN-GEE' rel="noopener noreferrer" target='_blank'>Github</a></li>
+                            <li><a href='https://ng-cocktails.web.app/' rel="noopener noreferrer" target='_blank'>Cocktail Search</a></li>
+                            <li><a href='https://travel-agency-client-2021.herokuapp.com/' rel="noopener noreferrer" target='_blank'>School Project</a></li>
+                            
                         </ul>
                         </Typography>
                 </Typography>
@@ -59,4 +61,4 @@ class EducationComponent extends React.Component<{}, toggle>{
         )
     }
 }
-export default EducationComponent;
+export default AboutComponent;

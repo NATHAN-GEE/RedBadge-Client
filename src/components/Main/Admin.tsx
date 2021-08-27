@@ -58,7 +58,6 @@ class UserAdmin extends React.Component<tokenProps, entry>{
         return (
             <div>
             <Paper style={{ maxHeight: 600, overflow: 'auto'}}>
-                {/* <h1>{this.props.token}</h1> */}
                 <thead>
                     <tr>
             <th>Id</th>

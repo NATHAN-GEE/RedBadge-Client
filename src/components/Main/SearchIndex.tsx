@@ -1,12 +1,12 @@
 import React from "react";
 import CountdownTimer from "./Timer";
-import UpdateBaby from "./baby/UpdateBaby";
-import UpdateTable from './Mother/updateMother'
-import CreateDrug from './Mother/MotherCreate'
-import CreateBaby from "./baby/CreateBaby";
-import MotherComponent from "./Mother/mother";
-import BabyComponent from './baby/Baby'
-import { Container, Grid,Typography, Button } from '@material-ui/core'
+import UpdateBaby from "../baby/UpdateBaby";
+import UpdateTable from '../Mother/updateMother'
+import CreateDrug from '../Mother/MotherCreate'
+import CreateBaby from "../baby/CreateBaby";
+import MotherComponent from "../Mother/mother";
+import BabyComponent from '../baby/Baby'
+import { Container, Grid, Button } from '@material-ui/core'
 
 type LoginProps={
   token: any;
@@ -49,7 +49,6 @@ class SearchIndex extends React.Component<LoginProps,LoginState> {
     })
       .then((res) => res.json())
       .then((logData) => {
-        console.log(logData)
           this.setState({ place: logData });
       });
   };
@@ -63,7 +62,6 @@ class SearchIndex extends React.Component<LoginProps,LoginState> {
     })
       .then((res) => res.json())
       .then((logData) => {
-        console.log(logData)
           this.setState({ place: logData });
       });
   };
@@ -77,14 +75,12 @@ class SearchIndex extends React.Component<LoginProps,LoginState> {
     })
       .then((res) => res.json())
       .then((logData) => {
-        console.log(logData)
           this.setState({ place: logData });
       });
   };
   
   editUpdate = (place:any) => {
       this.setState({ update: place });
-    console.log(place);
   };
   updateOn = () => {
       this.setState({ on: true });

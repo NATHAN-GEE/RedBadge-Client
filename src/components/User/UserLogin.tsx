@@ -1,7 +1,7 @@
 import React from 'react'
 import { Form } from 'reactstrap'
 import { FormGroup, Container,Button, Typography, TextField } from '@material-ui/core'
-import { createTheme, withStyles } from '@material-ui/core/styles';
+import { createTheme} from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 import { blue } from '@material-ui/core/colors';
 import { pink } from '@material-ui/core/colors';
@@ -45,7 +45,8 @@ constructor(props: LoginProps) {
     this.handleSubmit = this.handleSubmit.bind(this)
 }
 handleSubmit = (e: any) => {
-    e.preventDefault();
+  e.preventDefault();
+  
     fetch("http://localhost:4000/user/login", {
       method: "POST",
 
@@ -56,10 +57,12 @@ handleSubmit = (e: any) => {
     })
         .then((res) => res.json())
         .then((json) => {
-          console.log(json)
           this.props.role(json.user.role)
           this.props.updateToken(json.sessionToken)
-        });
+        }).
+   catch ((err) => {
+    return alert(`Email not found ${err}`)
+  })
 
   };
     render() {
@@ -68,10 +71,9 @@ handleSubmit = (e: any) => {
           <ThemeProvider theme={theme}>
           
             <Container maxWidth='xs'>
-                <Typography component='h1' style={{color:'#FFF'}}><h1>Login</h1></Typography>
+                <Typography  style={{color:'#FFF'}}><h1>Login</h1></Typography>
             <Form onSubmit={this.handleSubmit}>
                   <FormGroup >
-                    
                     <TextField
                       InputProps={{
                       startAdornment: (
@@ -83,7 +85,8 @@ handleSubmit = (e: any) => {
                       label='Email'
                       required={true}
                       color='secondary'
-                      type="text"
+                    type="email"
+              
                       value={this.state.email}
                       onChange={(e:any) => this.setState({email: e.target.value})}
                       />

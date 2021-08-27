@@ -29,14 +29,25 @@ class LatchComponent extends React.Component<{}, toggle>{
                 maxWidth='xs'
                 onClose={this.toggleModalClose}
                 fullWidth={true}>
-                <Typography paragraph>
-                    <h3>How to get a good latch</h3>
-                    The baby is more likely to latch on.
-                </Typography>
-                <DialogActions>
-                <button onClick={()=>this.setState({toggle: false})}>Close</button>
+                <Typography paragraph style={{ padding: '10px' }}>
+                        <h3>Tips on getting a good latch</h3>
+                        <hr/>
+                        <Typography style={{textAlign: 'left'}}>
 
-                </DialogActions>
+                        <ul style={{listStyleImage:'<ChildFriendlyIcon/>'}}>
+                            <li>Postion baby belly to belly and nose to nipple.</li>
+                            <li>When baby opens their mouth, move baby, chin first, to breast</li>
+                            <li>The baby's chin should be pressed against the breast.</li>
+                            <li>Then tilt the baby's head towards the breast for a full latch</li>
+                            <li>The baby should be able to look at you</li>
+                            <li>If you have pitching, easily break the latch and try again.</li>
+                        </ul>
+                        </Typography>
+                </Typography>
+                    <DialogActions>      
+                        <Button onClick={()=>this.setState({toggle: false})}>Close</Button>
+
+                    </DialogActions>
             </Dialog>
             
             </div>

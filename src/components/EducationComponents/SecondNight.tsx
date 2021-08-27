@@ -5,7 +5,7 @@ interface toggle{
     toggle: boolean
 }
 
-class EducationComponent extends React.Component<{}, toggle>{
+class SecondNightComponent extends React.Component<{}, toggle>{
     constructor(props: any) {
         super(props)
         this.state = {
@@ -24,14 +24,14 @@ class EducationComponent extends React.Component<{}, toggle>{
     render() {
         return (
             <div>
-            <Button onClick={this.toggleModalOpen}>Skin-to-Skin</Button>
+            <Button onClick={this.toggleModalOpen}>Baby's Second Night</Button>
             <Dialog open={this.state.toggle}
                 style={{ textAlign: 'center', justifyContent:'center'}}
                 maxWidth='xs'
                 onClose={this.toggleModalClose}
                 fullWidth={true}>
                     <Typography paragraph style={{ padding: '10px' }}>
-                        <h3>Skin-to-Skin contact</h3>
+                        <h3>Baby's second night</h3>
                         <hr/>
                         <p>Multiple studies show that mothers and babies benefit from skin-to-skin.
                             Immediately after birth and during the first week, the baby and mother build that
@@ -59,4 +59,4 @@ class EducationComponent extends React.Component<{}, toggle>{
         )
     }
 }
-export default EducationComponent;
+export default SecondNightComponent;
