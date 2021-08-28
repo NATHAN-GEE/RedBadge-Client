@@ -8,6 +8,8 @@ import CreateBaby from "../baby/CreateBaby";
 import MotherComponent from "../Mother/mother";
 import BabyComponent from '../baby/Baby'
 import { Container, Grid, Button } from '@material-ui/core'
+import {Parser} from 'json2csv'
+import {saveAs} from 'file-saver'
 
 type LoginProps={
   token: any;
@@ -21,7 +23,12 @@ interface LoginState{
   onbaby: boolean,
   toggle: string
 }
-   
+let dataStore: any;
+const SaveFile = (data:any) => {
+  const file = new File([data], "baby.csv", { type: "text/plain;charset=utf=8" })
+  return saveAs(file)
+}
+
 class SearchIndex extends React.Component<LoginProps,LoginState> {
     constructor(props:LoginProps) {
         super(props);
@@ -53,6 +60,7 @@ class SearchIndex extends React.Component<LoginProps,LoginState> {
           this.setState({ place: logData });
       });
   };
+  
   getBaby = () => {
     fetch(`${APIURL}/baby/all`, {
       method: "GET",
@@ -63,7 +71,9 @@ class SearchIndex extends React.Component<LoginProps,LoginState> {
     })
       .then((res) => res.json())
       .then((logData) => {
-          this.setState({ place: logData });
+        this.setState({ place: logData });
+        const parser = new Parser(logData)
+        dataStore = parser.parse(logData)
       });
   };
   getAdmin = () => {
@@ -154,6 +164,7 @@ class SearchIndex extends React.Component<LoginProps,LoginState> {
                 <Button variant='contained' color='primary' style={{margin:'10px'}} onClick={() => { this.getAdmin();this.setState({toggle: 'hide'}) }}>Adminhere</Button>
                 <Button variant='contained' color='secondary' style={{margin:'10px'}} onClick={() => { this.getTable();this.setState({toggle: 'hide'}) }}>Userhere</Button>
                 <Button variant='contained' color='primary' style={{margin:'10px'}} onClick={() => { this.getBaby(); this.setState({toggle: 'baby'}) }}>Babyhere</Button>
+                <Button variant='contained' color='primary' style={{ margin: '10px' }} onClick={() => { console.log(dataStore); SaveFile(dataStore) }}>Babyhere</Button>
                   {this.updateHide()}
                    {this.updateBaby()} 
               </Grid>

@@ -6,10 +6,9 @@ import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
-import { Paper, Container } from '@material-ui/core'
+import { Paper, Container, Button } from '@material-ui/core'
 import EditIcon from '@material-ui/icons/Edit'
 import DeleteIcon from '@material-ui/icons/Delete'
-
 
 interface tokenProps{
     token: any,
@@ -78,7 +77,7 @@ class BabyComponent extends React.Component<tokenProps, entry>{
         });
     };
     mapper = () => {
-        return this.props.place.map((place1:any, index:any)=>{
+        return this.props.place.map((place1: any, index: any) => {
             return (
                 <TableRow key={index}>
                     {/* <TableCell component='th' scope="place1">{place1.id}</TableCell> */}
@@ -98,7 +97,7 @@ class BabyComponent extends React.Component<tokenProps, entry>{
                     <TableCell>{place1.soilDiaper2}</TableCell>
                     <TableCell>{place1.soilDiaper3}</TableCell>
                     <TableCell><DeleteIcon color="secondary" onClick={() => {this.deleteBaby(place1)}}>Delete</DeleteIcon></TableCell>
-                    <TableCell><EditIcon color='primary' onClick={() => { this.props.editUpdate(place1); this.props.updateOnBaby()}}>Update</EditIcon></TableCell>
+                    <TableCell><EditIcon color='primary' onClick={() => { this.props.editUpdate(place1); this.props.updateOnBaby(); }}>Update</EditIcon></TableCell>
                 </TableRow>
             )
         })
@@ -135,7 +134,6 @@ class BabyComponent extends React.Component<tokenProps, entry>{
                         </TableBody>
                         </Table>
             </TableContainer>
-           
             </Container>
                 
         )
