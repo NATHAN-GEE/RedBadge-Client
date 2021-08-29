@@ -57,7 +57,10 @@ class SearchIndex extends React.Component<LoginProps,LoginState> {
     })
       .then((res) => res.json())
       .then((logData) => {
-          this.setState({ place: logData });
+       let sorted =  logData.sort(function (a:any, b:any) {
+          return a.id - b.id
+        })
+          this.setState({ place: sorted });
       });
   };
   
@@ -71,9 +74,12 @@ class SearchIndex extends React.Component<LoginProps,LoginState> {
     })
       .then((res) => res.json())
       .then((logData) => {
-        this.setState({ place: logData });
-        const parser = new Parser(logData)
-        dataStore = parser.parse(logData)
+        let sorted =  logData.sort(function (a:any, b:any) {
+          return a.day - b.day
+        })
+        this.setState({ place: sorted });
+        const parser = new Parser(sorted)
+        dataStore = parser.parse(sorted)
       });
   };
   getAdmin = () => {
