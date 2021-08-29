@@ -5,7 +5,8 @@ import { createTheme, Typography } from '@material-ui/core';
 import { blue } from '@material-ui/core/colors';
 import { pink } from '@material-ui/core/colors';
 import { ThemeProvider } from '@material-ui/styles';
-import { TextField,Button, Paper } from "@material-ui/core";
+import { TextField, Button, Paper, Divider } from "@material-ui/core";
+
 
 const theme1 = createTheme({
   spacing: 4,
@@ -66,7 +67,8 @@ class CreateDrug extends React.Component<tokenProps, updateState> {
         return (
           <ThemeProvider theme={theme1}>
             <Paper elevation={20} style={{backgroundColor: pink[200], marginTop:'25px',padding:'5px'}}>
-              <Typography component='h2' style={{ fontWeight: 'bold', color:'white'}}><h2>Add New Medication</h2></Typography>
+              <Typography component='h2' style={{ fontWeight: 'bold', color: 'white' }}><h2>Add New Medication</h2></Typography>
+              <Divider variant='middle'/>
             <Form onSubmit={this.handleSubmit}>
               <FormGroup>
                 <TextField

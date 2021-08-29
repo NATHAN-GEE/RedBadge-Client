@@ -40,15 +40,15 @@ class UserIndex extends React.Component<LoginProps, LoginState> {
     render() {
       return (
           <ThemeProvider theme={theme1}>
-          <Container maxWidth='lg'>
-            <Grid container spacing={4}>
+          <Container maxWidth='md'>
+            <Grid container spacing={10}>
               <Grid item sm={6} xs={12}>
-                <Paper style={{backgroundColor:pink[200], borderRadius:'50%', padding: 15, marginTop:55, height:'100%'}}>
+                <Paper style={{backgroundColor:pink[200], borderRadius:'50%', padding: 10, marginTop:55, height:'100%'}}>
                 <UserRegister updateToken={this.props.updateToken} />
                 </Paper>
               </Grid>
               <Grid item sm={6} xs={12}>
-              <Paper style={{backgroundColor:blue[200], borderRadius:'50%', padding: 15, marginTop:55, height:'100%'}}> 
+                <Paper style={{backgroundColor:blue[200], borderRadius:'50%', padding: 10, marginTop:55, height:'100%'}}> 
                 <UserLogin updateToken={this.props.updateToken} role={this.props.role} />
               </Paper>
               </Grid>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Typography, Dialog, DialogActions, Button } from '@material-ui/core'
+import { Typography, Dialog, DialogActions, Button, Link } from '@material-ui/core'
 
 interface toggle{
     toggle: boolean
@@ -40,13 +40,13 @@ class AboutComponent extends React.Component<{}, toggle>{
                             Here are some other things I have done.
                         </p>
                         <hr/>
-                        <Typography style={{textAlign: 'left'}}>
+                        <Typography style={{textAlign: 'left', listStyle:'none'}}>
 
-                        <ul>
-                            <li><a href='https://nathan-gee.github.io/Portfolio/' rel="noopener noreferrer" target='_blank'>Portfolio</a></li>
-                            <li><a href='https://github.com/NATHAN-GEE' rel="noopener noreferrer" target='_blank'>Github</a></li>
-                            <li><a href='https://ng-cocktails.web.app/' rel="noopener noreferrer" target='_blank'>Cocktail Search</a></li>
-                            <li><a href='https://travel-agency-client-2021.herokuapp.com/' rel="noopener noreferrer" target='_blank'>School Project</a></li>
+                        <ul style={{listStyle:'none'}}>
+                            <li><Link color='initial' href='https://nathan-gee.github.io/Portfolio/' rel="noopener noreferrer" target='_blank'>Portfolio</Link></li>
+                            <li><Link color='initial' href='https://github.com/NATHAN-GEE' rel="noopener noreferrer" target='_blank'>Github</Link></li>
+                            <li><Link color='initial' href='https://ng-cocktails.web.app/' rel="noopener noreferrer" target='_blank'>Cocktail Search</Link></li>
+                            <li><Link color='initial' href='https://travel-agency-client-2021.herokuapp.com/' rel="noopener noreferrer" target='_blank'>School Project</Link></li>
                             
                         </ul>
                         </Typography>

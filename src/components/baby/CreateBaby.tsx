@@ -5,7 +5,7 @@ import { createTheme, Typography } from '@material-ui/core';
 import { blue } from '@material-ui/core/colors';
 import { pink } from '@material-ui/core/colors';
 import { ThemeProvider } from '@material-ui/styles';
-import { TextField, Button,Paper, FormControl } from "@material-ui/core";
+import { TextField, Button,Paper, FormControl, Divider } from "@material-ui/core";
 
 const theme1 = createTheme({
   
@@ -120,8 +120,9 @@ class CreateBaby extends React.Component<tokenProps, updateState> {
           <div className='for'>
           <ThemeProvider theme={theme1}>
             <Paper elevation={20} style={{ backgroundColor: blue[200], marginTop: '25px', maxHeight: 600, overflow: 'auto'}}>
-            <Typography component='h2' style={{color:'white'}}>
-            <h2>Add New Baby Entry</h2>
+              <Typography component='h2' style={{ color: 'white' }}>
+                <h2>Add New Baby Entry</h2>
+                <Divider variant="middle"/>
             </Typography>
             <Typography  style={{color:'white'}}>
             <Form onSubmit={this.handleSubmit}>

@@ -166,11 +166,11 @@ class SearchIndex extends React.Component<LoginProps,LoginState> {
         return (
           <Container maxWidth='xl'  style={{ backgroundColor: '#353b46', height: '100%', width: '100%' }}>
             <Grid container spacing={2}>
-              <Grid item sm={6} xs={6} md={3} lg={2} zeroMinWidth>
+              <Grid item sm={6} xs={12} md={3} lg={2} zeroMinWidth>
                 <CreateDrug token={this.props.token} getTable={this.getTable} />
               <CountdownTimer startTimeInSeconds={900} />
               </Grid>
-              <Grid item sm={6} xs={6} md={3} lg={2}>
+              <Grid item sm={6} xs={12} md={3} lg={2}>
                 <CreateBaby token={this.props.token} getBaby={this.getBaby}/>
               </Grid>
               <Grid item sm={12} xs={12} md={6} lg={8} style={{marginTop:'15px'}}>

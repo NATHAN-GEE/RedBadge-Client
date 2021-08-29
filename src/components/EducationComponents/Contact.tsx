@@ -16,12 +16,14 @@ function ContactComponent() {
  
   return (
     <div>
-    <Button onClick={toggleModalOpen}>Contact Me</Button>
+    <Button variant='outlined' onClick={toggleModalOpen}>Contact Me</Button>
             <Dialog open={toggle}
                 style={{ textAlign: 'center', justifyContent:'center'}}
                 maxWidth='xs'
                 onClose={toggleModalClose}
-                fullWidth={true}>
+        fullWidth={true}>
+        <Typography style={{padding:25}}>
+
         <form onSubmit={handleSubmit}>
           <h3>Please contact me for further inquiries.</h3>
           <hr/>
@@ -54,10 +56,12 @@ function ContactComponent() {
       />
           </FormGroup>
       <DialogActions>
-      <Button type='submit' onClick={()=>setToggle(false)}>Submit</Button>
+              <Button type='submit' onClick={() => setToggle(false)}>Submit</Button>
+              <Button onClick={()=> setToggle(false)}>close</Button>
 
                 </DialogActions>
     </form>
+        </Typography>
       </Dialog>
       </div>
   );
