@@ -42,7 +42,7 @@ export default class ButtonAppBar extends React.Component<aprops, {}> {
           <ThemeProvider theme={theme}>
             <AppBar position="static" color="primary">
               <Toolbar>
-                <IconButton edge="start"  color="inherit" aria-label="menu" >
+                <IconButton edge="start"  color="inherit" aria-label="menu">
                   <Sidebar/>
                 </IconButton>
                 <Typography variant="h6" >

@@ -66,14 +66,13 @@ class App extends React.Component<{}, tokenState> {
   render() {
     return (
       
-      <Container disableGutters maxWidth='xl' style={{ backgroundColor: '#353b46', height: '120vh' }}>
+      <Container disableGutters maxWidth='xl' style={{ backgroundColor: '#353b46', height: '100vh' }}>
         <ThemeProvider theme={theme}>
           <div className="App">
             <ButtonAppBar clearToken={ this.clearToken}/>
               {this.protectedViews()}
           </div>
           <footer style={{ position:'fixed', bottom:0, backgroundColor:pink[200], width:'100%', left:0, padding:10}}>
-            
                 <div className='logo2'>
                   <h6>DevelopingNathan</h6>
                 </div>
