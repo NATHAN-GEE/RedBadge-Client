@@ -95,6 +95,13 @@ class SearchIndex extends React.Component<LoginProps,LoginState> {
           this.setState({ place: logData });
       });
   };
+
+  roleCheck = () => {
+    if (this.props.role === 'admin') {
+      
+      return <Button variant='contained' color='primary' style={{margin:'10px'}} onClick={() => { this.getAdmin();this.setState({toggle: 'hide'}) }}>Adminhere</Button>
+    }
+  }
   
   editUpdate = (place:any) => {
       this.setState({ update: place });
@@ -167,7 +174,8 @@ class SearchIndex extends React.Component<LoginProps,LoginState> {
                 <CreateBaby token={this.props.token} getBaby={this.getBaby}/>
               </Grid>
               <Grid item sm={12} xs={12} md={6} lg={8} style={{marginTop:'15px'}}>
-                <Button variant='contained' color='primary' style={{margin:'10px'}} onClick={() => { this.getAdmin();this.setState({toggle: 'hide'}) }}>Adminhere</Button>
+                {/* <Button variant='contained' color='primary' style={{margin:'10px'}} onClick={() => { this.getAdmin();this.setState({toggle: 'hide'}) }}>Adminhere</Button> */}
+                {this.roleCheck()}
                 <Button variant='contained' color='secondary' style={{margin:'10px'}} onClick={() => { this.getTable();this.setState({toggle: 'hide'}) }}>Userhere</Button>
                 <Button variant='contained' color='primary' style={{margin:'10px'}} onClick={() => { this.getBaby(); this.setState({toggle: 'baby'}) }}>Babyhere</Button>
                 <Button variant='contained' color='primary' style={{ margin: '10px' }} onClick={() => { console.log(dataStore); SaveFile(dataStore) }}>BabyDownload</Button>

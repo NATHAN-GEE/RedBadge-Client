@@ -57,7 +57,7 @@ class App extends React.Component<{}, tokenState> {
   protectedViews = () => {
     return (
       
-      this.state.sessionToken === localStorage.getItem('token') ? <SearchIndex token={this.state.sessionToken} role={this.roleCheck} /> :
+      this.state.sessionToken === localStorage.getItem('token') ? <SearchIndex token={this.state.sessionToken} role={this.state.role} /> :
         <UserIndex updateToken={this.updateToken} role={this.roleCheck}/>
     )
   }
