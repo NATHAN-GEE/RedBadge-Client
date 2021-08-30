@@ -23,7 +23,7 @@ const Sidebar = () => {
             <div>
                 <Button style={{color: 'white'}} onClick={toggleOn}>Menu<MenuIcon/></Button>
                 <Drawer anchor={'left'} open={open} onClose={toggleOff} >
-                    <Typography style={{padding:'45px', }}>
+                    <Typography style={{padding:'25px', }}>
                         <h3>Education:</h3>
                         <hr />
                         <br/>

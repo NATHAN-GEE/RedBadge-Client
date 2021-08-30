@@ -119,7 +119,7 @@ class CreateBaby extends React.Component<tokenProps, updateState> {
       return (
           <div className='for'>
           <ThemeProvider theme={theme1}>
-            <Paper elevation={20} style={{ backgroundColor: blue[200], marginTop: '25px', maxHeight: 600, overflow: 'auto'}}>
+            <Paper elevation={20} style={{ backgroundColor: blue[200], marginTop: '25px', maxHeight: 562, overflow: 'auto'}}>
               <Typography component='h2' style={{ color: 'white' }}>
                 <h2>Add New Baby Entry</h2>
                 <Divider variant="middle"/>
