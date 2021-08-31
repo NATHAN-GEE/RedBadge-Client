@@ -179,8 +179,8 @@ class SearchIndex extends React.Component<LoginProps,LoginState> {
                 {/* <Button variant='contained' color='primary' style={{margin:'10px'}} onClick={() => { this.getAdmin();this.setState({toggle: 'hide'}) }}>Adminhere</Button> */}
                 <h5 style={{color:'white'}}>*Scroll to the right to Edit or delete entries by clicking on the icons.</h5>
                 {this.roleCheck()}
-                <Button variant='contained' color='secondary' style={{margin:'10px'}} onClick={() => { this.getTable();this.setState({toggle: 'hide'}) }}>Userhere</Button>
-                <Button variant='contained' color='primary' style={{margin:'10px'}} onClick={() => { this.getBaby(); this.setState({toggle: 'baby'}) }}>Babyhere</Button>
+                <Button variant='contained' color='secondary' style={{margin:'10px'}} onClick={() => { this.getTable();this.setState({toggle: 'hide'}) }}>Medication</Button>
+                <Button variant='contained' color='primary' style={{margin:'10px'}} onClick={() => { this.getBaby(); this.setState({toggle: 'baby'}) }}>Baby Entries</Button>
                 <Button variant='contained' color='primary' style={{ margin: '10px' }} onClick={() => { console.log(dataStore); SaveFile(dataStore); }}>BabyDownload</Button>
                   {this.updateHide()}
                 {this.updateBaby()}

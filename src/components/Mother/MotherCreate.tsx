@@ -84,9 +84,9 @@ class CreateDrug extends React.Component<tokenProps, updateState> {
               <FormGroup>
                 <TextField
                   type="text"
-                  label="Amount"
+                  label="Dosage Description"
                   name="amount"
-                  placeholder="amount"
+                  placeholder="Dosage Description"
                   value={this.state.amount}
                   onChange={(e:any) => this.setState({ amount: e.target.value })}
                 />

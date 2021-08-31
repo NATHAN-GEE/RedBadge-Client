@@ -75,11 +75,11 @@ class MotherComponent extends React.Component<tokenProps, entry>{
         return results.map((place1:any, index:any)=>{
             return (
                 <TableRow key={index}>
-                    <TableCell component='th' scope='place1'>{place1.id}</TableCell>
+                    {/* <TableCell component='th' scope='place1'>{place1.id}</TableCell> */}
                     <TableCell>{place1.med}</TableCell>
                     <TableCell>{place1.amount}</TableCell>
-                    <TableCell>{place1.createdAt}</TableCell>
-                    <TableCell>{place1.updatedAt}</TableCell>
+                    {/* <TableCell>{place1.createdAt}</TableCell> */}
+                    {/* <TableCell>{place1.updatedAt}</TableCell> */}
                     <TableCell><DeleteIcon color='secondary'onClick={() => {this.deleteMother(place1)}}></DeleteIcon></TableCell>
                     <TableCell><EditIcon color='primary' onClick={() => { this.props.editUpdate(place1); this.props.updateOn()}}></EditIcon></TableCell>
                 </TableRow>
@@ -94,11 +94,11 @@ class MotherComponent extends React.Component<tokenProps, entry>{
             <Table>
             <TableHead>
             <TableRow>
-            <TableCell>Id</TableCell>
-            <TableCell>Med</TableCell>
-            <TableCell>Amount</TableCell>
-            <TableCell>Time created</TableCell>
-            <TableCell>Last Update</TableCell>
+            {/* <TableCell>Id</TableCell> */}
+            <TableCell>Medication</TableCell>
+            <TableCell>Dosage</TableCell>
+            {/* <TableCell>Time created</TableCell> */}
+            {/* <TableCell>Last Update</TableCell> */}
             <TableCell>Delete</TableCell>
             <TableCell>Update</TableCell>
             </TableRow>

@@ -49,7 +49,7 @@ class CreateBaby extends React.Component<tokenProps, updateState> {
     constructor(props: any) {
         super(props);
         this.state = {
-            day: 0,
+            day: null,
             feedingTime1:'',
             feedingTime2:'',
             feedingTime3:'',
@@ -130,6 +130,7 @@ class CreateBaby extends React.Component<tokenProps, updateState> {
                     <TextField
                   label='Day'
                   type="text"
+                  
                   value={this.state.day}
                   onChange={(e: any) => this.setState({ day: e.target.value })}
                 >
