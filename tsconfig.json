@@ -3,11 +3,7 @@
     "target": "es5",
     "outFile": "dist/bundle.js",
     "watch": true,
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -21,10 +17,10 @@
     "jsx": "react-jsx",
     "noImplicitAny": false,
     "module": "esnext",
+    "incremental": true,
     "isolatedModules": true
   },
   "compileOnSave": true,
-  "include": [
-    "src/*.ts"
-  ]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
 }

@@ -177,7 +177,6 @@ class SearchIndex extends React.Component<LoginProps,LoginState> {
               </Grid>
               <Grid item sm={12} xs={12} md={6} lg={8} style={{marginTop:'15px'}}>
                 {/* <Button variant='contained' color='primary' style={{margin:'10px'}} onClick={() => { this.getAdmin();this.setState({toggle: 'hide'}) }}>Adminhere</Button> */}
-                <h5 style={{color:'white'}}>*Fields are based on a minimum. If you have more you don't need to log them </h5>
                 <h5 style={{color:'white'}}>*Scroll to the right to Edit or delete entries by clicking on the icons.</h5>
                 {this.roleCheck()}
                 <Button variant='contained' color='secondary' style={{margin:'10px'}} onClick={() => { this.getTable();this.setState({toggle: 'hide'}) }}>Medication</Button>
