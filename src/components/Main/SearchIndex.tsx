@@ -168,6 +168,7 @@ class SearchIndex extends React.Component<LoginProps,LoginState> {
             <Grid container spacing={2}>
               <Grid item sm={6} xs={12} md={3} lg={2} zeroMinWidth>
                 <h5 style={{color:'white'}}>*Use the menu button for more tips and to connect with inquiries.</h5>
+                <h5 style={{color:'white'}}>*Fields are based on a minimum. If you have more you don't need to log them </h5>
               <CreateDrug token={this.props.token} getTable={this.getTable} />
               <CountdownTimer startTimeInSeconds={900} />
               </Grid>
